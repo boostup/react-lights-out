@@ -1,5 +1,7 @@
 [Live Demo](https://pedantic-stonebraker-c10870.netlify.app/)
 
+`Note:` right now, this game is mostly unsolvable. I will work on a module to remedy this using [this resource](https://www.jaapsch.net/puzzles/lights.htm#desc). However, let's keep in mind that this demo mainly exists to focus on React and Front-End skills ;)
+
 ## About the branch named `centered-and-not-responsive`
 
 Contrary to the master branch, the above mentioned branch holds a version of the layout that is centered and not responsive.
