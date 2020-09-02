@@ -1,3 +1,14 @@
+[Live Demo](https://pedantic-stonebraker-c10870.netlify.app/)
+
+## About the branch named `centered-and-not-responsive`
+
+Contrary to the master branch, the above mentioned branch holds a version of the layout that is centered and not responsive.
+
+### Pros and Cons of the centered layout
+
+`Pros` : the cells are always squared
+`Cons` : doesn't fit on mobile screens
+
 ## About this project
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
