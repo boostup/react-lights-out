@@ -1,15 +1,7 @@
 .App {
-  padding: 2rem;
-}
-
-@media screen and (device-width: 768px) {
-  .App {
-    padding: 3rem;
-  }
-}
-
-@media screen and (min-width: 1025px) {
-  .App {
-    padding: 5rem;
-  }
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 }
