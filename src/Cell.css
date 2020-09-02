@@ -1,0 +1,18 @@
+.Cell {
+  height: 15vw;
+  width: 15vw;
+  background-color: #263238;
+  border-radius: 1px;
+  transition: all, height 0.7s ease;
+  transition-property: height, background;
+}
+
+@media screen and (min-width: 701px) {
+  .Cell {
+    height: 12vh;
+  }
+}
+
+.Cell-lit {
+  background-color: #00bcd4;
+}
