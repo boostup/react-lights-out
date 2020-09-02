@@ -56,6 +56,26 @@ table.Board tr:last-child td:last-child {
   -o-animation: neon-blue 2s linear infinite;
 }
 
+.winner {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: -2rem;
+}
+
+@media screen and (device-width: 768px) {
+  .winner {
+    margin-top: -3rem;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .winner {
+    margin-top: -5rem;
+  }
+}
+
 @keyframes neon-orange {
   0%,
   100% {
