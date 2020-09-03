@@ -1,6 +1,10 @@
 [Live Demo](https://pedantic-stonebraker-c10870.netlify.app/)
 
-`Note:` right now, this game is mostly unsolvable. I will work on a module to remedy this using [this resource](https://www.jaapsch.net/puzzles/lights.htm#desc). However, let's keep in mind that this demo mainly exists to focus on React and Front-End skills ;)
+## Roadmap
+
+- [ ] include a reset/restart button for when player has won, or when player decides they want to try a new puzzle
+- [ ] display moves counter
+- [ ] show hints
 
 ## About the branch named `centered-and-not-responsive`
 
