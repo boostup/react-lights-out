@@ -1,15 +1,19 @@
 .App {
-  padding: 2rem;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-@media screen and (device-width: 768px) {
+@media screen and (min-width: 768px) {
   .App {
-    padding: 3rem;
+    min-height: 90vh;
   }
 }
 
 @media screen and (min-width: 1025px) {
   .App {
-    padding: 5rem;
+    min-height: 100vh;
   }
 }
