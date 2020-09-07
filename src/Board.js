@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { motion } from "framer-motion";
+
 import createBoard from "./puzzleStore";
 import Cell from "./Cell";
 import "./Board.css";
@@ -7,7 +9,47 @@ class Board extends Component {
   static defaultProps = {
     nrows: 5,
     ncols: 5,
+    onMountAnim: {
+      container: {
+        hidden: { opacity: 0 },
+        show: {
+          opacity: 1,
+          transition: {
+            delayChildren: 1.5,
+          },
+        },
+      },
+      item: {
+        hidden: {
+          opacity: 0,
+          y: -50,
+        },
+        show: {
+          opacity: 1,
+          y: 0,
+        },
+        transition: {
+          duration: 0.8,
+        },
+      },
+    },
+    youWinAnim: {
+      container: {
+        hidden: {
+          opacity: 0,
+          y: "-150%",
+        },
+        show: {
+          opacity: 0.7,
+          y: 0,
+        },
+        transition: {
+          duration: 0.8,
+        },
+      },
+    },
   };
+
   constructor(props) {
     super(props);
 
@@ -47,14 +89,16 @@ class Board extends Component {
   }
 
   /** Render game board or winning message. */
-  makeTable() {
+  makeTableCells() {
+    let { ncols, nrows, onMountAnim } = this.props;
     let tblBoard = [];
-    for (let y = 0; y < this.props.nrows; y++) {
+    for (let y = 0; y < nrows; y++) {
       let row = [];
-      for (let x = 0; x < this.props.ncols; x++) {
+      for (let x = 0; x < ncols; x++) {
         let coord = `${y}-${x}`;
         row.push(
           <Cell
+            anim={onMountAnim.item}
             key={coord}
             isLit={this.state.board[y][x]}
             flipCellsAroundMe={() => this.flipCellsAround(coord)}
@@ -63,30 +107,30 @@ class Board extends Component {
       }
       tblBoard.push(<tr key={y}>{row}</tr>);
     }
-    return (
-      <table className="Board">
-        <tbody>{tblBoard}</tbody>
-      </table>
-    );
+    return <tbody>{tblBoard}</tbody>;
   }
   render() {
+    const { onMountAnim, youWinAnim } = this.props;
     return (
-      <>
-        {this.state.hasWon ? (
-          <div className="winner">
+      <motion.div
+        variants={onMountAnim.container}
+        initial="hidden"
+        animate="show"
+      >
+        {this.state.hasWon && (
+          <motion.div variants={youWinAnim.container} className="winner">
             <span className="neon-orange">YOU</span>
             <span className="neon-blue">WIN!</span>
-          </div>
-        ) : (
-          <>
-            <div className="Board-title">
-              <div className="neon-orange">Lights</div>
-              <div className="neon-blue">Out</div>
-            </div>
-            {this.makeTable()}
-          </>
+          </motion.div>
         )}
-      </>
+        <>
+          <motion.div variants={onMountAnim.item} className="Board-title">
+            <div className="neon-orange">Lights</div>
+            <div className="neon-blue">Out</div>
+          </motion.div>
+          <table className="Board">{this.makeTableCells()}</table>
+        </>
+      </motion.div>
     );
   }
 }

@@ -1,8 +1,8 @@
 .Board {
   margin: 0 auto;
   max-width: 700px;
-  box-shadow: 0 0 50px #fff, -10px 0 80px #f0f, 10px 0 80px #0ff;
   border-radius: 10px;
+  animation: board-neon 1s ease 1 2s forwards;
 }
 
 table.Board tr:first-child td:first-child {
@@ -25,38 +25,33 @@ table.Board tr:last-child td:last-child {
   line-height: 20vw;
 }
 
-@media screen and (min-width: 600px) {
-  .Board-title {
-    font-size: 9vw;
-    line-height: 9vw;
-  }
-}
-
 .neon-orange {
   font-family: neon;
   color: #fb4264;
   text-shadow: 0 0 3vw #f40a35;
-  animation: neon-orange 1s ease infinite;
-  -moz-animation: neon-orange 1s ease infinite;
-  -webkit-animation: neon-orange 1s ease infinite;
+  animation: neon-orange 2s ease 1 3s;
 }
 
 .neon-blue {
   font-family: neon;
   color: #426dfb;
   text-shadow: 0 0 3vw #2356ff;
-  animation: flux 2s linear infinite;
-  -moz-animation: neon-blue 2s linear infinite;
-  -webkit-animation: neon-blue 2s linear infinite;
-  -o-animation: neon-blue 2s linear infinite;
+  animation: neon-blue 2s ease infinite 4s;
 }
 
 .winner {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: -2rem;
+  font-size: 15vw;
+  line-height: 20vw;
+}
+
+@keyframes board-neon {
+  100% {
+    box-shadow: 0 0 50px #fff, -10px 0 80px #f0f, 10px 0 80px #0ff;
+  }
 }
 
 @keyframes neon-orange {
@@ -84,5 +79,26 @@ table.Board tr:last-child td:last-child {
     text-shadow: 0 0 0.5vw #082180, 0 0 1.5vw #082180, 0 0 5vw #082180,
       0 0 5vw #082180, 0 0 0.2vw #082180, 0.5vw 0.5vw 0.1vw #0a3940;
     color: #146c80;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .Board-title {
+    font-size: 9vw;
+    line-height: 9vw;
+  }
+
+  .neon-orange {
+    animation: neon-orange 1s ease infinite;
+    -moz-animation: neon-orange 1s ease infinite;
+    -webkit-animation: neon-orange 1s ease infinite;
+    -o-animation: neon-blue 2s linear infinite;
+  }
+
+  .neon-blue {
+    animation: flux 2s linear infinite;
+    -moz-animation: neon-blue 2s linear infinite;
+    -webkit-animation: neon-blue 2s linear infinite;
+    -o-animation: neon-blue 2s linear infinite;
   }
 }

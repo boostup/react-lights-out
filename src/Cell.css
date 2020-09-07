@@ -1,7 +1,8 @@
 .Cell {
   height: 15vw;
   width: 15vw;
-  background-color: #263238;
+  background-color: #3a4c54;
+  /* #b43768 */
   border-radius: 1px;
   transition: all, height 0.7s ease;
   transition-property: height, background;
