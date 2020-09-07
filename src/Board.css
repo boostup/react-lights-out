@@ -42,6 +42,7 @@ table.Board tr:last-child td:last-child {
 .winner {
   min-height: 100vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: 15vw;

@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import createBoard from "./puzzleStore";
 import Cell from "./Cell";
 import "./Board.css";
+import NeonButton from "./NeonButton";
 
 class Board extends Component {
   static defaultProps = {
@@ -109,6 +110,16 @@ class Board extends Component {
     }
     return <tbody>{tblBoard}</tbody>;
   }
+
+  handleRestartButton = (evt) => {
+    setTimeout(() => {
+      this.setState({
+        hasWon: false,
+        board: createBoard(),
+      });
+    }, 1200);
+  };
+
   render() {
     const { onMountAnim, youWinAnim } = this.props;
     return (
@@ -121,15 +132,21 @@ class Board extends Component {
           <motion.div variants={youWinAnim.container} className="winner">
             <span className="neon-orange">YOU</span>
             <span className="neon-blue">WIN!</span>
+            <NeonButton
+              label="Restart"
+              handleClick={this.handleRestartButton}
+            />
           </motion.div>
         )}
-        <>
-          <motion.div variants={onMountAnim.item} className="Board-title">
-            <div className="neon-orange">Lights</div>
-            <div className="neon-blue">Out</div>
-          </motion.div>
-          <table className="Board">{this.makeTableCells()}</table>
-        </>
+        {!this.state.hasWon && (
+          <>
+            <motion.div variants={onMountAnim.item} className="Board-title">
+              <div className="neon-orange">Lights</div>
+              <div className="neon-blue">Out</div>
+            </motion.div>
+            <table className="Board">{this.makeTableCells()}</table>
+          </>
+        )}
       </motion.div>
     );
   }
