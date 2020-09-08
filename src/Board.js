@@ -38,7 +38,7 @@ class Board extends Component {
       container: {
         hidden: {
           opacity: 0,
-          y: "-150%",
+          y: "-50%",
         },
         show: {
           opacity: 0.7,
@@ -70,8 +70,8 @@ class Board extends Component {
 
     function flipCell(y, x) {
       // if this coord is actually on board, flip it
-
       if (x >= 0 && x < ncols && y >= 0 && y < nrows) {
+        console.log(y, x);
         board[y][x] = !board[y][x];
       }
     }
@@ -94,10 +94,9 @@ class Board extends Component {
     let { ncols, nrows, onMountAnim } = this.props;
     let tblBoard = [];
     for (let y = 0; y < nrows; y++) {
-      let row = [];
       for (let x = 0; x < ncols; x++) {
         let coord = `${y}-${x}`;
-        row.push(
+        tblBoard.push(
           <Cell
             anim={onMountAnim.item}
             key={coord}
@@ -106,9 +105,8 @@ class Board extends Component {
           />
         );
       }
-      tblBoard.push(<tr key={y}>{row}</tr>);
     }
-    return <tbody>{tblBoard}</tbody>;
+    return tblBoard;
   }
 
   handleRestartButton = (evt) => {
@@ -144,7 +142,7 @@ class Board extends Component {
               <div className="neon-orange">Lights</div>
               <div className="neon-blue">Out</div>
             </motion.div>
-            <table className="Board">{this.makeTableCells()}</table>
+            <div className="Board">{this.makeTableCells()}</div>
           </>
         )}
       </motion.div>

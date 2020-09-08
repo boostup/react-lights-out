@@ -1,20 +1,33 @@
 .Board {
-  margin: 0 auto;
-  max-width: 700px;
   border-radius: 10px;
   animation: board-neon 1s ease 1 2s forwards;
+  max-width: 320px;
+  margin: 0 auto;
+  padding: 0rem 0.2rem 0rem 0rem;
+  display: grid;
+  grid-template-columns: repeat(5, 20%);
+  gap: 1px;
 }
 
-table.Board tr:first-child td:first-child {
+.Board .Cell {
+  padding: 1rem;
+}
+.Board .Cell::before {
+  content: "";
+  padding-top: 100%;
+  display: block;
+}
+
+.Board .Cell:first-child {
   border-radius: 10px 0 0 0 !important;
 }
-table.Board tr:first-child td:last-child {
+.Board .Cell:nth-child(5) {
   border-radius: 0 10px 0 0 !important;
 }
-table.Board tr:last-child td:first-child {
+.Board .Cell:nth-child(21) {
   border-radius: 0 0 0 10px !important;
 }
-table.Board tr:last-child td:last-child {
+.Board .Cell:last-child {
   border-radius: 0 0 10px 0 !important;
 }
 
@@ -89,6 +102,10 @@ table.Board tr:last-child td:last-child {
     line-height: 9vw;
   }
 
+  .Board {
+    max-width: 700px;
+  }
+
   .neon-orange {
     animation: neon-orange 1s ease infinite;
     -moz-animation: neon-orange 1s ease infinite;
@@ -101,5 +118,23 @@ table.Board tr:last-child td:last-child {
     -moz-animation: neon-blue 2s linear infinite;
     -webkit-animation: neon-blue 2s linear infinite;
     -o-animation: neon-blue 2s linear infinite;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .Board-title {
+    font-size: 7vw;
+    line-height: 7vw;
+  }
+
+  .Board {
+    max-width: 800px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .winner {
+    font-size: 7vw;
+    line-height: 7vw;
   }
 }
