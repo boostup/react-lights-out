@@ -19,7 +19,7 @@ class Cell extends Component {
     let classes = "Cell" + (isLit ? " Cell-lit" : "");
 
     return (
-      <motion.td
+      <motion.div
         initial={anim.hidden}
         animate={anim.show}
         transition={isLit ? { delay: 1 } : { delay: 0.5 }}
