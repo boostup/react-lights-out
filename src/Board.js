@@ -75,7 +75,7 @@ class Board extends Component {
         board[y][x] = !board[y][x];
       }
     }
-    // TODO: flip this cell and the cells around it
+    // flip this cell and the cells around it
     flipCell(y, x); //Flip initial cell
     flipCell(y, x - 1); //flip left
     flipCell(y, x + 1); //flip right
@@ -83,7 +83,7 @@ class Board extends Component {
     flipCell(y + 1, x); //flip above
 
     // win when every cell is turned off
-    // TODO: determine is the game has been won
+    // determine is the game has been won
     let hasWon = board.every((row) => row.every((cell) => !cell));
 
     this.setState({ board: board, hasWon: hasWon });
