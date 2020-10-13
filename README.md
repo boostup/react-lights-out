@@ -1,5 +1,9 @@
 [Live Demo](https://pedantic-stonebraker-c10870.netlify.app/)
 
+![Color Palette Composition App](public/images/lights-out-demo.gif)
+
+---
+
 ## Roadmap
 
 - [ ] include a reset/restart button for when player has won, or when player decides they want to try a new puzzle
