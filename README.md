@@ -6,6 +6,19 @@
 
 ---
 
+# Tips
+
+- Number the rows 1-5, the columns A-E.
+- For each light on row 1, press the button beneath it on row 2 to turn the light off. This way row 1 is completely unlit.
+- Repeat step a for rows 2-4, so that now you only have lights on row 5. This is usually called 'chasing the lights'.
+- If the light at A5 is on, press D1 and E1.
+- If the light at B5 is on, press B1 and E1.
+- If the light at C5 is on, press D1.
+- Repeat steps a-b, chasing the lights down and it will be magically solved.
+- This method will not solve the puzzle in the shortest possible way, but it is very simple.
+
+---
+
 ## Roadmap
 
 - [ ] include a reset/restart button for when player has won, or when player decides they want to try a new puzzle
